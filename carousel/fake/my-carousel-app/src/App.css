@@ -22,7 +22,7 @@
 }
 
 .carousel .image-container {
-  width: 415px;
+  /* width: 415px; */
   flex-grow: 0;
   flex-shrink: 0;
   overflow: hidden;

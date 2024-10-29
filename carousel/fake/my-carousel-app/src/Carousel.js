@@ -46,14 +46,12 @@ const Carousel = () => {
               snap：配置动画结束时的“吸附”效果，使结束平滑且对齐。
             */
           scrollTrigger: {
-            horizontal: !0,
-            scroller: "#scroller",
+            horizontal: true,
+            scroller: containerRef.current,
             trigger: element,
-            start: `${index * (element.offsetWidth + 10) - 700}px center`,
+            start: index * (element.offsetWidth + 10) - 700,
             end: `${index === 0 ? "+=0px" : "+=700px"}`,
-            // start: index * (element.offsetWidth + 10) - 700,
-            // end: index === 0 ? "+=0px" : "+=700px",
-            scrub: !0,
+            scrub: true,
             snap: {
               // snapTo: "labelsDirectional"指定滚动吸附到由标签指示的方向。在GSAP中，标签可以用来标记时间线的特定点。"labelsDirectional"表示吸附行为会基于滚动的方向（向上滚动或向下滚动）来决定吸附到上一个标签或下一个标签。这意味着如果用户向下滚动，滚动结束时将吸附到下一个标签；如果向上滚动，则吸附到上一个标签。
               snapTo: "labelsDirectional",
@@ -77,9 +75,9 @@ const Carousel = () => {
           <div
             key={src}
             className={
-              index === images.length - 1
-                ? "image-container last-filler-item"
-                : "image-container"
+              //   index === images.length - 1
+              //     ? "image-container last-filler-item"
+              "image-container"
             }
           >
             <img src={src} alt="test"></img>
